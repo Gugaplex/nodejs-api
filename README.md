@@ -20,7 +20,7 @@ Docker creates an image from the dockerfile, which is the “recipe” for the d
 6. ```curl -i http://localhost:8080/fx```
 
 Steps 5 and 6 are done to test if the api call is running fine.
-(image1)
+<img src="https://raw.githubusercontent.com/Gugaplex/nodejs-api/master/Picture1.png"></img>
 
 7. ```docker tag container gugaplex/container:1```
 
@@ -33,7 +33,7 @@ Docker account username and password is input in this stage to enable the contai
 9. ```docker push gugaplex/container:1``` 
 
 This command pushes the container to the docker repository. 
-(image2)
+<img src="https://raw.githubusercontent.com/Gugaplex/nodejs-api/master/Picture2.png"></img>
 
 10. ```docker pull gugaplex/container:1```
 
@@ -42,6 +42,6 @@ A new cloud shell virtual machine was run and this command was used to deploy th
 11. ```curl -i http://localhost:8080/fx```
 
 This api was called to test if the built docker container was deployed successfully.
-(image3)
+<img src="https://raw.githubusercontent.com/Gugaplex/nodejs-api/master/Picture3.png"></img>
 
 

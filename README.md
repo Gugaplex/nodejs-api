@@ -1,27 +1,47 @@
-# Currency Exchange API – NodeJS
-
-docker run -d -p 8080:8080 u1ih/nodejs-api
-
-curl -i http://localhost:8080/fx
-
-CI/CD pipeline implemented using GitHub Actions:
-
-* create docker container
-* push to gcr.io container registry
-* deploy to Google Cloud Run (knative / PaaS)
-
-Live endpoint available at: [https://nodejsapi-tgihgzgplq-uc.a.run.app/](https://nodejsapi-tgihgzgplq-uc.a.run.app/)
-
-[https://nodejsapi-tgihgzgplq-uc.a.run.app/fx](https://nodejsapi-tgihgzgplq-uc.a.run.app/fx)
+<h1>AIM: To find out how to create a container and deploy it in a virtual machine.</h1>
 
 
-The CI/CD build workflow needs documentation. For now, here is how you connect it to GCP: [https://gcp-examquestions.com/ci-cd-solutions-deploy-to-google-cloud-run-using-github-actions/](https://gcp-examquestions.com/ci-cd-solutions-deploy-to-google-cloud-run-using-github-actions/)
+1. Forked from https://github.com/u1i/nodejs-api
 
-In order for this to be provisioned on your Google Cloud instance, you need to make sure you create/update these GitHub secrets:
 
-* GCP_APPLICATION
-* GCP_CREDENTIALS
-* GCP_EMAIL
-* GCP_PROJECT
+2. ```git clone https://github.com/Gugaplex/nodejs-api```
 
-You'll also need to activate a couple of APIs in Google Cloud, the first deployment will probably fail and point you into the right direction. Alternatively, you could deploy the first version manually.
+This clones the forked repository into the cloud shell virtual machine.
+
+3. ```cd nodejs-api```
+
+This opens the nodejs-api folder
+
+4. ```docker build . -t container```
+
+Docker creates an image from the dockerfile, which is the “recipe” for the docker container.
+
+5. ```docker run -d -p 8080:8080 container```
+6. ```curl -i http://localhost:8080/fx```
+
+Steps 5 and 6 are done to test if the api call is running fine.
+(image1)
+
+7. ```docker tag container gugaplex/container:1```
+
+This creates a tag for the docker container
+
+8. ```docker login```
+
+Docker account username and password is input in this stage to enable the container to be pushed to the docker repository.
+
+9. ```docker push gugaplex/container:1``` 
+
+This command pushes the container to the docker repository. 
+(image2)
+
+10. ```docker pull gugaplex/container:1```
+
+A new cloud shell virtual machine was run and this command was used to deploy the container.
+
+11. ```curl -i http://localhost:8080/fx```
+
+This api was called to test if the built docker container was deployed successfully.
+(image3)
+
+

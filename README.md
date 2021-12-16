@@ -14,7 +14,7 @@ git clone https://github.com/Gugaplex/nodejs-api
 cd nodejs-api
 ```
 
-4. An image from the dockerfile, which is the “recipe” for the docker container, using the command below.
+4. An image is created from the dockerfile, which is the “recipe” for the docker image, using the command below.
 ```
 docker build . -t container
 ```
@@ -32,19 +32,19 @@ curl -i http://localhost:8080/fx
 
 </br>
 
-## Pushing a container to Docker and deploying it in a new virtual machine
-6. This creates a tag for the docker container.
+## Pushing an image to Docker and deploying a container in a new virtual machine
+6. This creates a tag for the docker image.
 ```
 docker tag container gugaplex/container:1
 ```
 
-7. Your Docker account username and password is input in this stage to enable the container to be pushed to your docker repository.
+7. Your Docker account username and password is input in this stage to enable the image to be pushed to your docker repository.
 The authentication prevents others from spamming your repository.
 ```
 docker login
 ```
 
-8. This command pushes the container to the docker repository. 
+8. This command pushes the image to the docker repository. 
 ```
 docker push gugaplex/container:1
 ``` 

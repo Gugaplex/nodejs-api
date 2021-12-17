@@ -57,7 +57,7 @@ docker push gugaplex/container:1
 docker pull gugaplex/container:1
 ```
 
-10. This api was called to test if the built docker container was deployed successfully. 
+10. This api was called to test if the docker container was deployed successfully. 
 ```
 curl -i http://localhost:8080/fx
 ```

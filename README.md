@@ -32,19 +32,19 @@ curl -i http://localhost:8080/fx
 
 </br>
 
-## Pushing an image to Docker and deploying a container in a new virtual machine
-6. This creates a tag for the docker image.
+## Pushing a container to Docker and deploying an image in a new virtual machine
+6. This creates a tag for the docker container.
 ```
 docker tag container gugaplex/container:1
 ```
 
-7. Your Docker account username and password is input in this stage to enable the image to be pushed to your docker repository.
+7. Your Docker account username and password is input in this stage to enable the container to be pushed to your docker repository.
 The authentication prevents others from spamming your repository.
 ```
 docker login
 ```
 
-8. This command pushes the image to the docker repository. 
+8. This command pushes the container to the docker repository. 
 ```
 docker push gugaplex/container:1
 ``` 
@@ -52,12 +52,12 @@ docker push gugaplex/container:1
   <img src="https://raw.githubusercontent.com/Gugaplex/nodejs-api/master/Picture2.png"></img>
 </p>
 
-9. A new cloud shell virtual machine was run and this command was used to deploy the container.
+9. A new cloud shell virtual machine was run and this command was used to deploy the image.
 ```
 docker pull gugaplex/container:1
 ```
 
-10. This api was called to test if the docker container was deployed successfully. 
+10. This api was called to test if the docker image was deployed successfully. 
 ```
 curl -i http://localhost:8080/fx
 ```
